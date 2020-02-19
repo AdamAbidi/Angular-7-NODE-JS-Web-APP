@@ -1,0 +1,157 @@
+<div class="main-content">
+    <div class=" col-md-16">
+        <div class="card">
+            <div class="card-header card-header-warning">
+                <h4 class="card-title">web services list</h4>
+                
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                  <thead class="text-warning">
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>URI</th>
+                      <th>Input File</th>
+                      <th>Run</th>
+                  </thead>
+                  <tbody >
+                      <style>
+                        .btn3 {
+                            background-color: rgb(255, 30, 68); /* Blue background */
+                            color: white;
+                          }
+                        .button {
+                            border-radius: 4px;
+                            background-color: #f16e46;
+                            border: none;
+                            color: #FFFFFF;
+                            text-align: center;
+      
+                            transition: all 0.5s;
+                            cursor: pointer;
+                            margin: 5px;
+                        }
+    
+                        .button span {
+                            cursor: pointer;
+                            display: inline-block;
+                            position: relative;
+                            transition: 0.5s;
+                        }
+    
+                        .button span:after {
+                            content: '\00bb';
+                            position: absolute;
+                            opacity: 0;
+                            top: 0;
+                            right: -20px;
+                            transition: 0.5s;
+                        }
+    
+                        .button:hover span {
+                            padding-right: 25px;
+                        }
+    
+                        .button:hover span:after {
+                            opacity: 1;
+                            right: 0;
+                        }
+                        .buttonload {
+                            border-radius: 4px;
+                            background-color: #4CAF50; /* Green background */
+                            border: none; /* Remove borders */
+                            color: white; /* White text */
+                            padding: 12px 16px; /* Some padding */
+      
+                        }
+                        .btn2 {
+                          background-color: rgb(248, 245, 248);
+                          border: none;
+                          color: black;
+                          padding: 16px 32px;
+                          text-align: center;
+                          font-size: 13px;
+                          margin: 4px 2px;
+                          transition: 0.3s;
+                          padding: 12px 16px;
+                        }
+
+                        .btn2:hover {
+                          background-color: #3e8e41;
+                          color: white;
+                         }
+                          
+                          </style>
+                      <tr *ngFor="let iter of DataContent;let i = index" >
+                          <td >{{iter.name}}</td>
+                          <td >
+                            <button mat-raised-button class=" btn-info btn-block" (click)="notif(i+1)" width="20%">More info</button>
+                          </td>
+                          <td >{{iter.URI}}</td>
+                          <td> 
+                            <select class="custom-select mr-sm-1" (click)="checkInput(i,$event)">
+                              <option selected>Choose...</option>
+                              <option  *ngFor="let currentData of InputFileName">{{currentData}}</option>
+                            </select> 
+                       
+                          </td>
+                         
+                          <td>
+                            <form>
+                              <div layout-align='center center' layout='row'  >
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                                  <p  class="btn btn-success btn-lg" (click)="RUN_service(i)">
+                                    <span class="glyphicon glyphicon-play" ></span> Run
+                                  </p>                
+                              </div>
+                            </form>
+                          </td>
+                        
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          
+        </div>        
+      </div>
+
+<div layout="column" layout-align="center end">
+        <div class="card">
+            <div class="card-header card-header-warning">
+                <h4 class="card-title">Expected Output</h4>
+                
+            </div>
+
+            <form>
+              <div class="form-row align-items-center">
+                <div class="col-auto my-1">
+                  <label class="mr-sm-2" for="Exp_out"></label>
+                </div>
+ 
+                <div class="col-auto my-1">{{errorMessage}} 
+                <br>The output should be like :<br>
+                {{OutputContent}}</div>
+               </div>
+             </form>
+          </div>
+
+          <div class="card">
+              <div class="card-header card-header-warning">
+                  <h4 class="card-title">Generated Output</h4>
+                  
+              </div>
+  
+              <form>
+                <div class="form-row align-items-center">
+                  <div class="col-auto my-1">
+                    <label class="col-auto my-1" for="Exp_out"> </label>
+                  </div >
+                    <div class="col-auto my-1"> {{gen_out}}</div>
+                  <br><br><br><br><br>
+                  
+                 </div>
+               </form>
+            </div>
+</div>
+ 

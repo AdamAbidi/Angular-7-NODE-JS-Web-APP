@@ -1,0 +1,31 @@
+<div class="main-content">
+  <div class="col-md-8" >
+    <div class="card" >
+      <div class="card-header card-header-success" >
+        <h4 class="card-title ">Create a new web service</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">     
+          <form >
+            <div class="form-row col-md-8">
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Service name" (keyup)="onKey1($event)">
+            </div>
+            <br>
+            <div class="form-row col-md-8">
+              <input class="form-control" id="inputURI4" placeholder="URI" (keyup)="onKey2($event)">
+            </div>
+            <br>
+            <div class="form-row col-md-8">
+              <textarea class="form-control" placeholder="service description" (keyup)="onKey3($event)"></textarea>
+            </div>
+            <br>
+            <button class="btn btn-primary" style="background-color:#33a8c2 " (click)=" Insert_web_service()()">Enter parameters</button>
+            <br><br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+ 
+</div>

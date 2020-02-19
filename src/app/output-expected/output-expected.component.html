@@ -1,0 +1,19 @@
+<div class="main-content">
+  <p>
+    output expected works!
+
+    {{message}}
+
+
+  </p>
+
+
+  <div *ngIf="show">
+    <input>
+    </div>
+    <button type="button" (click)="toggle()">Close</button>
+    <div *ngIf="buttonName">
+    <a (click)="toggle()"><i class="fa fa-plus text-white"></i></a>
+    </div>
+  <br><br><br><br><br><br><br><br><br>
+  </div>

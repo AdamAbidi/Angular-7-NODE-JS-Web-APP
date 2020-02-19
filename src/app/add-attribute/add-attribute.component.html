@@ -1,0 +1,49 @@
+<div class="main-content" >
+  <div class=" col-md-8">
+    <div class="card">
+      <div class="card-header card-header-info">
+        <h4 class="card-title">web services list</h4>  
+      </div>
+      <form>
+        <div class="form-row align-items-center" >
+          <div class="col-auto my-1" style="transform: translate(15px,0px);">
+            <label class="mr-sm-2" for="mySelect"></label>  
+            <select class="custom-select mr-sm-1" id="mySelect" (change)="selectChangeHandler($event)" >
+              <option selected>Choose...</option>
+              <option  *ngFor="let title of DataContent">{{title.name}} </option>
+            </select>
+            <button mat-raised-button class="btn btn-danger btn-block" (click)="notif(selected_id)" width="20%">More info</button>
+          </div>
+        </div>                
+      </form>  
+    </div>        
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header card-header-info">
+        <h4 class="card-title ">Type web service parameters</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">    
+          <form><br>
+            <div class="form-group col-md-5">
+              <label for="inputState">Input File</label>
+              <div class="btn btn-primary" style="padding: 1px;transform: translate(25px,0px);">
+                <input type="file" class="custom-file-input" id="customFile" (change)="onChange1($event.target.files)">
+                <label for="customFile"  class="btn btn-primary" >Browse Input file</label>
+              </div>
+            </div><br>
+            <div class="form-group col-md-5">
+              <label for="outputState">Expected Output File</label>
+              <div class="btn btn-primary" style="padding: 1px;transform: translate(150px,-45px);">
+                <input type="file" class="custom-file-input2" id="customFile2"(change)="onChange2($event.target.files)">
+                <label for="customFile2"  class="btn btn-primary" >Browse Output file</label>
+              </div>
+            </div>
+            <button class="btn btn-primary" (click)="submit()" *ngIf="isAvailable">Update database</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
