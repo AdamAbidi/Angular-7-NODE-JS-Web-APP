@@ -246,3 +246,7 @@ Instagram: <https://www.instagram.com/CreativeTimOfficial>
 [CHANGELOG]: ./CHANGELOG.md
 
 [version-badge]: https://img.shields.io/badge/version-2.3.0-blue.svg
+
+
+## Installation :
+npm install @adamabidi/angular-7-node-js-web-app@4.7.3
