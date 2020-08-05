@@ -46,7 +46,7 @@
     "cors": "^2.8.5",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.5",
+    "express-fileupload": "^1.1.9",
     "file-saver": "^2.0.2",
     "file-system": "^2.2.2",
     "googleapis": "40.0.0",
